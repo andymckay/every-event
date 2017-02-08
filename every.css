@@ -1,0 +1,7 @@
+html, body {
+  width: 350px;
+}
+
+div.panel {
+  padding: 1em;
+}

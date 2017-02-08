@@ -1,0 +1,47 @@
+{
+  "description": "An attempt to capture every event and log it to the console. Please open the browser console.",
+  "homepage_url": "https://github.com/mdn/webextensions-examples/tree/master/every-event",
+  "manifest_version": 2,
+  "name": "Every event",
+  "permissions": [
+    "alarms",
+    "bookmarks",
+    "contextMenus",
+    "contextualIdentities",
+    "cookies",
+    "downloads",
+    "downloads.open",
+    "history",
+    "sessions",
+    "tabs",
+    "webNavigation",
+    "webRequest",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "commands": {
+    "console": {
+      "suggested_key": { "default": "Ctrl+Shift+U" },
+      "description": "Send an event to the console"
+    }
+  },
+  "icons": {
+    "128": "alarm.svg"
+  },
+  "browser_action": {
+    "browser_style": true,
+    "default_title": "Developing tool - Every Event",
+    "default_popup": "every.html",
+    "default_icon": {
+      "128": "alarm.svg"
+    }
+  },
+  "version": "1.0",
+  "applications": {
+    "gecko": {
+      "id": "every-event@andym.mozilla.com"
+    }
+  }
+}
