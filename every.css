@@ -5,3 +5,12 @@ html, body {
 div.panel {
   padding: 1em;
 }
+
+div.panel img {
+  float: right;
+  height: 32px;
+}
+
+p.toggle {
+  font-size: 1.2em;
+}
