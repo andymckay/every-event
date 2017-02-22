@@ -1,16 +1,10 @@
-html, body {
-  width: 350px;
-}
-
-div.panel {
-  padding: 1em;
-}
-
-div.panel img {
+.pull {
   float: right;
-  height: 32px;
+  width: 15em;
 }
 
-p.toggle {
-  font-size: 1.2em;
+.pull {
+  background-color: whitesmoke;
+  border-left: 4px solid grey;
+  padding: 1em;
 }

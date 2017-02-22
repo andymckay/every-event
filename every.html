@@ -3,21 +3,28 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="bootstrap.min.css"/>
     <link rel="stylesheet" href="every.css"/>
   </head>
   <body>
-    <div class="panel">
-      <img src="alarm.svg">
+    <div class="container">
+      <h3>Every Event</h3>
+      <p class="pull">
+        Please note: this is a tool designed for developers to get demonstrate <a href="https://developer.mozilla.org/en-US/Add-ons/WebExtensions">WebExtension</a> events.
+      </p>
       <p class="toggle">
-        <a href="#">Turn on</a> every event.
+        <a href="#" class="btn btn-success">Turn on event listeners</a>
       </p>
+      <p>To see event logs <b>open the</b> <a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Console" class="external">Browser Console</a></b>.</p>
+      <p>To test command events press: <code>Ctrl+Shift+U</code> or <code>Command+Shift+U</code>.</p>
+      <p>To test context menu events, right click on the "every event" button in the toolbar.</p>
+      <p>To trigger an alarm in a few seconds <a href="#" class="alarm">click here</a>.
       <hr>
-      <p>
-        <b>Please note: this is a tool intended for developers.</b>
-      </p>
-      <p class="help">
-        Open the <a href="https://developer.mozilla.org/en-US/docs/Tools/Browser_Console">Browser Console</a>, then hit a page like this <a href="https://example.com">example.com</a> page to see the events that occur on it.
-      </p>
+      <h4>Events by API</h4>
+      <p>Changes will take effect when you restart the event listeners.</p>
+      <p class="all"><a href="#" data-action="off" class="label label-danger">All off</a> <a href="#" data-action="on" class="label label-success">All on</a>
+      <form class="apis help">
+      </form>
     </div>
     <script src="every.js"></script>
   </body>
