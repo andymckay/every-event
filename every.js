@@ -55,6 +55,13 @@ for (let elm of document.getElementsByClassName('alarm')) {
   });
 }
 
+for (let elm of document.getElementsByClassName('storage')) {
+  elm.addEventListener('click', (event) => {
+    browser.storage.local.set({timestamp: Date.now()});
+    event.preventDefault();
+  });
+}
+
 for (let elm of document.getElementsByClassName('label')) {
   elm.addEventListener('click', (event) => {
     let state = event.target.dataset.action == "on" ? true : false;
