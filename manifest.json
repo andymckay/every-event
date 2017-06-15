@@ -16,6 +16,7 @@
     "sessions",
     "storage",
     "tabs",
+    "theme",
     "webNavigation",
     "webRequest",
     "<all_urls>"

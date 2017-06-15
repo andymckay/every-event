@@ -62,6 +62,20 @@ for (let elm of document.getElementsByClassName('storage')) {
   });
 }
 
+for (let elm of document.getElementsByClassName('theme')) {
+  elm.addEventListener('click', (event) => {
+    browser.theme.update({
+      images: {
+        headerURL: 'transparent.png'
+      },
+      colors: {
+        accentcolor: '#000',
+        textcolor: '#fff',
+      }
+    });
+  });
+}
+
 for (let elm of document.getElementsByClassName('label')) {
   elm.addEventListener('click', (event) => {
     let state = event.target.dataset.action == "on" ? true : false;
