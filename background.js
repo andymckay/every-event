@@ -13,10 +13,8 @@ var currier = function(fn) {
 };
 
 function genericLogger(name, ...args) {
-  console.group();
   console.log(`Event fired: browser.${name}`);
   console.log(`Arguments: %o`, args.length === 1 ? args[0] : args);
-  console.groupEnd();
 }
 
 function isEvent(obj) {
