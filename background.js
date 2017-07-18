@@ -56,26 +56,26 @@ function populateAPIs() {
 }
 
 function events(enable) {
-    for (let key of Object.keys(apis)) {
-      let api = apis[key];
-      let method = browser[api.api_name][api.method_name];
-      if (enable && apis_grouped[api.api_name].enabled) {
-        let listener = currier(genericLogger, api.name);
-        api.listener = listener;
-        if (api.api_name === 'webRequest') {
-          method.addListener(api.listener, {urls: ["<all_urls>"]});
-        } else {
-          method.addListener(api.listener);
-        }
-        console.log(`Added listener to: ${api.name}`);
+  for (let key of Object.keys(apis)) {
+    let api = apis[key];
+    let method = browser[api.api_name][api.method_name];
+    if (enable && apis_grouped[api.api_name].enabled) {
+      let listener = currier(genericLogger, api.name);
+      api.listener = listener;
+      if (api.api_name === 'webRequest') {
+        method.addListener(api.listener, {urls: ["<all_urls>"]});
       } else {
-        if (api.listener) {
-          method.removeListener(api.listener);
-          api.listener = null;
-          console.log(`Removed listener from: ${api.name}`);
-        }
+        method.addListener(api.listener);
+      }
+      console.log(`Added listener to: ${api.name}`);
+    } else {
+      if (api.listener) {
+        method.removeListener(api.listener);
+        api.listener = null;
+        console.log(`Removed listener from: ${api.name}`);
       }
     }
+  }
 }
 
 function toggle() {
