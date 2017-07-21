@@ -12,7 +12,6 @@
     "downloads",
     "downloads.open",
     "history",
-    "runtime",
     "sessions",
     "storage",
     "tabs",
@@ -43,7 +42,7 @@
       "128": "alarm.svg"
     }
   },
-  "version": "2.3",
+  "version": "2.4",
   "applications": {
     "gecko": {
       "id": "every-event@andym.mozilla.com"
