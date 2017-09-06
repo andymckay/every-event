@@ -4,7 +4,7 @@
   "manifest_version": 2,
   "name": "Every event",
   "permissions": [
-    "activeTab"
+    "activeTab",
     "alarms",
     "bookmarks",
     "browsingData",
@@ -17,7 +17,7 @@
     "geolocation",
     "history",
     "identity",
-    "idle"
+    "idle",
     "management",
     "nativeMessaging",
     "notifications",
@@ -29,7 +29,7 @@
     "topSites",
     "webNavigation",
     "webRequest",
-    "webRequestBlocking"
+    "webRequestBlocking",
     "<all_urls>"
   ],
   "background": {
