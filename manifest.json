@@ -4,20 +4,32 @@
   "manifest_version": 2,
   "name": "Every event",
   "permissions": [
+    "activeTab"
     "alarms",
     "bookmarks",
+    "browsingData",
+    "browserSettings",
     "contextMenus",
     "contextualIdentities",
     "cookies",
     "downloads",
     "downloads.open",
+    "geolocation",
     "history",
+    "identity",
+    "idle"
+    "management",
+    "nativeMessaging",
+    "notifications",
+    "proxy",
     "sessions",
     "storage",
     "tabs",
     "theme",
+    "topSites",
     "webNavigation",
     "webRequest",
+    "webRequestBlocking"
     "<all_urls>"
   ],
   "background": {
@@ -42,10 +54,11 @@
       "128": "alarm.svg"
     }
   },
-  "version": "2.4",
+  "version": "3.0",
   "applications": {
     "gecko": {
       "id": "every-event@andym.mozilla.com"
     }
-  }
+  },
+  "devtools_page": "devtools.html"
 }
