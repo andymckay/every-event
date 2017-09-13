@@ -14,6 +14,7 @@
     "cookies",
     "downloads",
     "downloads.open",
+    "find",
     "geolocation",
     "history",
     "identity",
@@ -54,7 +55,7 @@
       "128": "alarm.svg"
     }
   },
-  "version": "3.0",
+  "version": "3.1",
   "applications": {
     "gecko": {
       "id": "every-event@andym.mozilla.com"
