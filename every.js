@@ -23,7 +23,7 @@ if (bg.enabled) {
 
 let root = document.getElementsByClassName('apis')[0];
 
-for (let key of Object.keys(bg.apis_grouped)) {
+for (let key of Object.keys(bg.apis_grouped).sort()) {
   let api = bg.apis_grouped[key];
   let row = document.createElement('div');
   let input = document.createElement('input');
