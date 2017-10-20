@@ -9,7 +9,6 @@
     "bookmarks",
     "browsingData",
     "browserSettings",
-    "contextMenus",
     "contextualIdentities",
     "cookies",
     "downloads",
@@ -20,6 +19,7 @@
     "identity",
     "idle",
     "management",
+    "menus",
     "nativeMessaging",
     "notifications",
     "proxy",
@@ -55,11 +55,17 @@
       "128": "alarm.svg"
     }
   },
-  "version": "3.1",
+  "version": "3.2",
   "applications": {
     "gecko": {
       "id": "every-event@andym.mozilla.com"
     }
   },
-  "devtools_page": "devtools.html"
+  "devtools_page": "devtools.html",
+  "sidebar_action": {
+    "default_icon": {
+      "128": "alarm.svg"
+    },
+    "default_panel": "sidebar.html"
+  }
 }

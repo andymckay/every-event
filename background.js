@@ -94,10 +94,11 @@ function toggle() {
   return enabled;
 }
 
-browser.contextMenus.create({
+browser.menus.create({
   id: "every-event",
   title: "Every Event",
-  contexts: ["browser_action"]
+  icons: {128: "alarm.svg"},
+  contexts: ["all", "tab", "tools_menu"]
 });
 
 function triggerAlarm() {
