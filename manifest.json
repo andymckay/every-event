@@ -55,7 +55,7 @@
       "128": "alarm.svg"
     }
   },
-  "version": "3.2",
+  "version": "3.3",
   "applications": {
     "gecko": {
       "id": "every-event@andym.mozilla.com"
@@ -67,5 +67,13 @@
       "128": "alarm.svg"
     },
     "default_panel": "sidebar.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "omnibox": { "keyword" : "every" }
 }
