@@ -1,7 +1,7 @@
 var URL = 'https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/';
 var enabled = false;
-var apis = {};
-var apis_grouped = {};
+var apis = new Map();
+var apis_grouped = new Map();
 
 var currier = function(fn) {
   var args = Array.prototype.slice.call(arguments, 1);
@@ -36,30 +36,30 @@ function populateAPIs() {
       let method = browser[api_name][method_name];
       if (method && isEvent(method)) {
         let name = `${api_name}.${method_name}`;
-        apis[name] = {
+        apis.set(name, {
           api_name: api_name,
           method_name: method_name,
           name: name,
           listener: null
-        };
+        });
         if (!Object.keys(apis_grouped).includes(api_name)) {
-          apis_grouped[api_name] = {
+          apis_grouped.set(api_name, {
             url: `${URL}${api_name}/#Events`,
             methods: [],
             enabled: true
-          };
+          });
         }
-        apis_grouped[api_name].methods.push(apis[name]);
+        apis_grouped.get(api_name).methods.push(apis.get(name));
       }
     }
   }
 }
 
 function events(enable) {
-  for (let key of Object.keys(apis)) {
-    let api = apis[key];
+  for (let key of apis.keys()) {
+    let api = apis.get(key);
     let method = browser[api.api_name][api.method_name];
-    if (enable && apis_grouped[api.api_name].enabled) {
+    if (enable && apis_grouped.get(api.api_name).enabled) {
       let listener = currier(genericLogger, api.name);
       api.listener = listener;
       if (api.api_name === 'webRequest') {
@@ -85,7 +85,7 @@ function toggle() {
     browser.browserAction.setBadgeText({text: 'OFF'});
     enabled = false;
   } else {
-    console.log('Turning on enabled event.');
+    console.log('Turning on enabled events.');
     browser.browserAction.setBadgeBackgroundColor({color: 'green'});
     browser.browserAction.setBadgeText({text: 'ON'});
     enabled = true;

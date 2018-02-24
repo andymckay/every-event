@@ -23,8 +23,7 @@ if (bg.enabled) {
 
 let root = document.getElementsByClassName('apis')[0];
 
-for (let key of Object.keys(bg.apis_grouped).sort()) {
-  let api = bg.apis_grouped[key];
+function addElement(key, api) {
   let row = document.createElement('div');
   let input = document.createElement('input');
   input.type = 'checkbox';
@@ -40,6 +39,8 @@ for (let key of Object.keys(bg.apis_grouped).sort()) {
   row.appendChild(url);
   root.appendChild(row);
 }
+
+new Map([...bg.apis_grouped.entries()].sort()).forEach(addElement);
 
 for (let elm of document.getElementsByClassName('external')) {
   elm.addEventListener('click', (event) => {
@@ -81,7 +82,7 @@ for (let elm of document.getElementsByClassName('label')) {
     let state = event.target.dataset.action == "on" ? true : false;
     for (let input of document.querySelectorAll('input[type=checkbox]')) {
       input.checked = state;
-      bg.apis_grouped[input.value].enabled = state;
+      bg.apis_grouped.get(input.value).enabled = state;
     }
     event.preventDefault();
   });
@@ -89,7 +90,7 @@ for (let elm of document.getElementsByClassName('label')) {
 
 for (let elm of document.querySelectorAll('input[type=checkbox]')) {
   elm.addEventListener('change', (event) => {
-    bg.apis_grouped[event.target.value].enabled = event.target.checked;
+    bg.apis_grouped.get(event.target.value).enabled = event.target.checked;
     console.log(`changed ${event.target.value}`);
     event.preventDefault();
   });
