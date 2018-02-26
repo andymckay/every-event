@@ -11,6 +11,7 @@
     "browserSettings",
     "contextualIdentities",
     "cookies",
+    "dns",
     "downloads",
     "downloads.open",
     "find",
@@ -56,7 +57,7 @@
       "128": "alarm.svg"
     }
   },
-  "version": "3.6",
+  "version": "3.6.1",
   "applications": {
     "gecko": {
       "id": "every-event@andym.mozilla.com"
