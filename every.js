@@ -23,7 +23,7 @@ if (bg.enabled) {
 
 let root = document.getElementsByClassName('apis')[0];
 
-function addElement(key, api) {
+function addElement(api, key) {
   let row = document.createElement('div');
   let input = document.createElement('input');
   input.type = 'checkbox';
